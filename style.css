@@ -1,0 +1,95 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --rings-count: 10;
+  --rods-count: 3;
+
+  --hanoi-tower-width: 95vw;
+  --rod-width: 10px;
+  --rod-height: 90%;
+  --ring-container-width: 80%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  justify-items: center;
+}
+.game-container {
+  width: 95%;
+}
+.hanoi-container {
+  display: grid;
+  grid-template-areas:
+    "hanoi-section"
+    "hanoi-base";
+}
+
+.hanoi-sections {
+  grid-area: hanoi-section;
+  width: var(--hanoi-tower-width);
+  height: calc(var(--hanoi-tower-width) / var(--rods-count));
+
+  display: flex;
+}
+
+.hanoi-section {
+  background-color: #f2e0d3;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.hanoi-rod {
+  background-color: #96714c;
+  border-radius: 10px 10px 0 0;
+  height: var(--rod-height);
+  width: var(--rod-width);
+  position: absolute;
+  /* Puts the rod at center */
+  left: calc(50% - var(--rod-width) / 2);
+
+  bottom: 0;
+}
+
+.hanoi-rings {
+  height: var(--ring-container-width);
+  aspect-ratio: 1/1;
+
+  position: absolute;
+
+  /* Puts Rings container at center */
+  left: calc(50% - var(--ring-container-width) / 2);
+
+  display: grid;
+
+  /* It divides the space into how many rings we have */
+  grid-template-rows: repeat(var(--rings-count), 1fr);
+  justify-items: center;
+
+  bottom: 0;
+}
+
+.hanoi-ring {
+  background-color: #ea977b;
+  /* border: #00000034 1px solid; */
+  border-radius: 4px;
+
+  width: 50%; /* This Changes in js based on number */
+
+  /* Places text at center */
+  display: grid;
+  place-content: center;
+}
+
+.hanoi-base {
+  grid-area: hanoi-base;
+  height: 10px;
+  background-color: #775a3c;
+}
