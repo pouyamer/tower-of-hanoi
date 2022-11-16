@@ -41,7 +41,8 @@ body {
 }
 
 .hanoi-section {
-  background-color: #f2e0d3;
+  cursor: pointer;
+  background-color: #fff2e8;
   aspect-ratio: 1/1;
   position: relative;
 }
@@ -78,10 +79,7 @@ body {
 
 .hanoi-ring {
   background-color: #ea977b;
-  /* border: #00000034 1px solid; */
   border-radius: 4px;
-
-  width: 50%; /* This Changes in js based on number */
 
   /* Places text at center */
   display: grid;
@@ -92,4 +90,10 @@ body {
   grid-area: hanoi-base;
   height: 10px;
   background-color: #775a3c;
+}
+
+.hanoi-ring,
+.hanoi-rings,
+.hanoi-rod {
+  pointer-events: none;
 }
