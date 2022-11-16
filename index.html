@@ -16,7 +16,7 @@
         <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">About...</a>
         <div class="hanoi-container">
             <div class="hanoi-sections">
-                <div class="hanoi-section">
+                <div data-section-index="0" class="hanoi-section">
                     <div class="hanoi-rod"></div>
 
                     <!-- Rings will be put here -->
@@ -24,15 +24,17 @@
                     <!---------------------------->
 
                 </div>
-                <div class="hanoi-section">
+                <div data-section-index="1" class="hanoi-section">
                     <div class="hanoi-rod"></div>
 
                     <!-- Rings will be put here -->
-                    <div class="hanoi-rings"></div>
+                    <div class="hanoi-rings">
+
+                    </div>
                     <!---------------------------->
 
                 </div>
-                <div class="hanoi-section">
+                <div data-section-index="2" class="hanoi-section">
                     <div class="hanoi-rod"></div>
 
                     <!-- Rings will be put here -->
@@ -44,7 +46,9 @@
                 </div>
             </div>
             <div class="hanoi-base"></div>
+
         </div>
+        <p dir="rtl">Moves: <b id="score">0</b> </p>
     </main>
 </body>
 
